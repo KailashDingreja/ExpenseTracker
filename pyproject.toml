@@ -1,0 +1,21 @@
+[project]
+name = "ledgify"
+version = "0.1.0"
+description = "Local-first personal expense tracker (Streamlit + SQLite)"
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit>=1.40",
+    "pandas>=2.2",
+    "plotly>=5.24",
+    "pydantic>=2.8",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff", "black"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 110
