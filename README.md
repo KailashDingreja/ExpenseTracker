@@ -1,30 +1,77 @@
 # Ledgify
 
-A private, local-first expense tracker. Streamlit + SQLite, one user, no login, no cloud.
+## Project Name
 
-## Run (Windows)
+Ledgify — a personal expense tracker.
 
-Double-click `run.bat`, or:
+## Project Description
+
+Ledgify is a local-first app for recording and reviewing personal income and expenses. It uses SQLite to store data on your computer; it does not require an account or send your financial data to a cloud service.
+
+## Features
+
+- Record, edit, delete, filter, and search income and expenses
+- Organize transactions with customizable categories
+- Set monthly budgets and review spending reports
+- Import and export transactions as CSV
+- Back up and restore your local database
+- Customize currency, text size, and contrast
+
+## Technology Used
+
+- Python 3.11 or newer
+- Streamlit
+- SQLite
+- pandas and Plotly
+- Pydantic
+- pytest (development and testing)
+
+## How to Install
+
+1. Install Python 3.11 or newer.
+2. Clone the repository and change into the project directory:
+
+   ```powershell
+   git clone https://github.com/KailashDingreja/ExpenseTracker.git
+   cd ExpenseTracker
+   ```
+
+3. Create and activate a virtual environment, then install the project:
+
+   ```powershell
+   python -m venv .venv
+   .venv\Scripts\Activate.ps1
+   python -m pip install -e .
+   ```
+
+   To install the development dependencies (including pytest), use:
+
+   ```powershell
+   python -m pip install -e ".[dev]"
+   ```
+
+## How to Run Locally
+
+From the project directory, start the app:
 
 ```powershell
-python -m venv .venv
-.venv\Scripts\pip install -e .[dev]
-.venv\Scripts\streamlit run app.py
+streamlit run app.py
 ```
 
-The app opens at http://localhost:8501.
+Then open [http://localhost:8501](http://localhost:8501) in your browser. On Windows, you can also double-click `run.bat`; it creates a virtual environment and installs the app on the first run.
 
-## Where is my data?
+By default, the database is stored at `%APPDATA%\Ledgify\ledgify.db` on Windows. Set `LEDGIFY_DATA_DIR` to use a different data directory. The database is not encrypted, so protect your local files and backups.
 
-`%APPDATA%\Ledgify\ledgify.db`. Set `LEDGIFY_DATA_DIR` to use another folder.
-Use **Settings → Back up now** regularly. The data file is not encrypted.
-
-## Tests
+To run tests after installing the development dependencies:
 
 ```powershell
-.venv\Scripts\pytest
+python -m pytest
 ```
 
-## Layout
+## GitHub Repository
 
-See `plan.md`. Pages are in `pages/`, logic in `ledgify/` (db, repositories, services, ui).
+[https://github.com/KailashDingreja/ExpenseTracker](https://github.com/KailashDingreja/ExpenseTracker)
+
+## Live Application URL
+
+Not currently deployed. Run the app locally using the instructions above.
